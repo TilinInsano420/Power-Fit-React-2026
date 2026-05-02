@@ -1,24 +1,17 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+.env
+media/
 
-node_modules
-dist
-dist-ssr
-*.local
+# React / Node
+node_modules/
+dist/
+.env.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Sistema / editores
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.vscode/
+.idea/
