@@ -1,4 +1,5 @@
 import { Dumbbell, Facebook, HeartPulse, Instagram, MapPin, Music2, Sparkles, Target, Users } from 'lucide-react';
+import { FaTiktok } from 'react-icons/fa';
 import Footer from '../../components/layout/Footer';
 import logo from '../../assets/images/logo.jpeg';
 import heroA from '../../assets/images/fondo2.jpeg';
@@ -75,12 +76,15 @@ const Landing = () => {
             <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-200">
               Entrena, diviértete y alcanza tus metas junto a una comunidad que te motiva cada día. Clases grupales, seguimiento y un ambiente que te impulsa a seguir.
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-lime-400 px-6 py-4 font-black uppercase text-black shadow-[0_0_30px_rgba(132,204,22,0.35)] transition hover:bg-lime-300">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+              <a href={instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-lime-400 px-6 py-4 font-black uppercase text-black shadow-[0_0_30px_rgba(132,204,22,0.35)] transition hover:bg-lime-300">
                 <Instagram size={20} /> Ver Instagram
               </a>
-              <a href={facebookUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/20 bg-black/40 px-6 py-4 font-black uppercase text-white backdrop-blur transition hover:border-lime-400 hover:text-lime-400">
+              <a href={facebookUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl border border-white/20 bg-black/40 px-6 py-4 font-black uppercase text-white backdrop-blur transition hover:border-lime-400 hover:text-lime-400">
                 <Facebook size={20} /> Ver Facebook
+              </a>
+              <a href={tiktokUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-lime-400 px-9 py-4 font-black uppercase text-black shadow-[0_0_30px_rgba(132,204,22,0.35)] transition hover:bg-lime-300">
+                <FaTiktok size={20} /> Ver TikTok
               </a>
             </div>
             <div className="mt-8 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
@@ -245,28 +249,41 @@ const Landing = () => {
       </section>
 
       <section id="contacto" className="px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 rounded-[2rem] border border-lime-400/20 bg-gradient-to-r from-zinc-950 to-black p-8 shadow-[0_0_50px_rgba(132,204,22,0.12)] md:grid-cols-[1.2fr_1fr_1fr_1fr] md:p-10">
-          <div>
-            <h2 className="text-3xl font-black uppercase">Tu mejor versión te está esperando</h2>
-            <p className="mt-3 text-zinc-400">Conoce PowerFit Copiapó en redes y descubre todo lo que tenemos para ti.</p>
-          </div>
-          <a href={instagramUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-lime-400 p-5 text-black transition hover:bg-lime-300">
-            <Instagram className="mb-3" />
-            <p className="font-black uppercase">Ver Instagram</p>
-            <p className="text-sm">@powerfit_copiapo</p>
-          </a>
-          <a href={facebookUrl} target="_blank" rel="noreferrer" className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-lime-400">
-            <Facebook className="mb-3 text-lime-400" />
-            <p className="font-black uppercase">Ver Facebook</p>
-            <p className="text-sm text-zinc-400">Power FIT Copiapó</p>
-          </a>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-            <MapPin className="mb-3 text-lime-400" />
-            <p className="font-black uppercase">Copiapó, Chile</p>
-            <p className="text-sm leading-6 text-zinc-400">Calle Lastarria #1098, esquina Algarrobo.</p>
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-lime-400/20 bg-gradient-to-r from-zinc-950 to-black p-8 shadow-[0_0_50px_rgba(132,204,22,0.12)] md:p-10">
+        <div className="mb-10 max-w-2xl">
+          <h2 className="text-3xl font-black uppercase">
+            Tu mejor versión te está esperando
+          </h2>
+          <p className="mt-3 text-zinc-400">
+            Conoce PowerFit Copiapó en redes y descubre todo lo que tenemos para ti.
+          </p>
+        </div>
+        <div className="grid gap-8 md:grid-cols-4">
+      <a href={instagramUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-lime-400 p-5 text-black transition hover:bg-lime-300">
+        <Instagram className="mb-3" />
+        <p className="font-black uppercase">Ver Instagram</p>
+        <p className="text-sm">@powerfit_copiapo</p>
+      </a>
+        <a href={facebookUrl} target="_blank" rel="noreferrer" className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-lime-400">
+        <Facebook className="mb-3 text-lime-400" />
+        <p className="font-black uppercase">Ver Facebook</p>
+        <p className="text-sm text-zinc-400">Power FIT Copiapó</p>
+      </a>
+      <a href={tiktokUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-lime-400 p-5 text-black transition hover:bg-lime-300">
+        <FaTiktok className="mb-3" />
+        <p className="font-black uppercase">Ver Tiktok</p>
+        <p className="text-sm">PowerFit_Copiapó</p>
+      </a>
+      <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+        <MapPin className="mb-3 text-lime-400" />
+        <p className="font-black uppercase">Copiapó, Chile</p>
+        <p className="text-sm leading-6 text-zinc-400">
+          Calle Lastarria #1098, esquina Algarrobo.
+        </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <Footer />
     </div>

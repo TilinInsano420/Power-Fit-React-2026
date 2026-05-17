@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Menu, X } from 'lucide-react';
 import logo from '../../assets/images/logo.jpeg';
+import { FaTiktok } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,6 +41,9 @@ const Navbar = () => {
           <a href="https://www.facebook.com/PowerFITcopiapo/" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-full border border-lime-400/70 text-lime-400 transition hover:bg-lime-400 hover:text-black" aria-label="Facebook PowerFit Copiapó">
             <Facebook size={19} />
           </a>
+          <a href="https://www.tiktok.com/@powerfit_copiapo" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-full border border-lime-400/70 text-lime-400 transition hover:bg-lime-400 hover:text-black" aria-label="Facebook PowerFit Copiapó">
+            <FaTiktok size={19} />
+          </a>
         </div>
 
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white md:hidden" aria-label="Abrir menú">
@@ -61,6 +65,9 @@ const Navbar = () => {
               </a>
               <a href="https://www.facebook.com/PowerFITcopiapo/" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-lime-400 px-4 py-3 font-black text-lime-400">
                 <Facebook size={18} /> Facebook
+              </a>
+               <a href="https://www.tiktok.com/@powerfit_copiapo" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-lime-400 px-4 py-3 font-black text-lime-400">
+                <FaTiktok size={18} /> Facebook
               </a>
             </div>
           </div>
