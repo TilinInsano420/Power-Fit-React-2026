@@ -1,5 +1,6 @@
 import { Facebook, Instagram, MapPin } from 'lucide-react';
 import logo from '../../assets/images/logo.jpeg';
+import { FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -34,6 +35,7 @@ const Footer = () => {
           <div className="space-y-3 text-sm text-zinc-300">
             <a href="https://www.instagram.com/powerfit_copiapo" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-lime-400"><Instagram size={18} /> @powerfit_copiapo</a>
             <a href="https://www.facebook.com/PowerFITcopiapo/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-lime-400"><Facebook size={18} /> Power FIT Copiapó</a>
+            <a href="https://www.tiktok.com/@powerfit_copiapo" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-lime-400"><FaTiktok size={18} /> PowerFit_Copiapó</a>
           </div>
         </div>
 

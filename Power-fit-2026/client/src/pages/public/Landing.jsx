@@ -126,7 +126,7 @@ const Landing = () => {
       </section>
 
       <section id="redes" className="py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div className="mx-auto grid max-w-[1600px] gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
             <p className="mb-3 text-sm font-black uppercase tracking-[0.3em] text-lime-400">Redes sociales</p>
             <h2 className="text-4xl font-black uppercase leading-tight sm:text-5xl">Síguenos y sé parte de nuestra <span className="text-lime-400">comunidad</span></h2>
@@ -146,24 +146,40 @@ const Landing = () => {
                   <p className="text-zinc-400">Power FIT Copiapó</p>
                 </div>
               </a>
+              <a href={tiktokUrl} target="_blank" rel="noreferrer" className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-lime-400/70">
+                <FaTiktok className="text-lime-400" size={30} />
+                <div>
+                  <p className="font-black uppercase">Tiktok</p>
+                  <p className="text-zinc-400">PowerFit_Copiapó</p>
+                </div>
+              </a>
             </div>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-4 shadow-xl">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-zinc-950 p-6 shadow-xl">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-3"><Instagram className="text-lime-400" /><span className="font-black uppercase">Instagram</span></div>
                 <span className="text-sm text-lime-400">@powerfit_copiapo</span>
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                {[baileImg, stepImg, localizadoImg, fitSalsaImg].map((img, index) => (
-                  <img key={index} src={img} alt="Publicación PowerFit" className="h-36 w-full rounded-2xl object-cover" />
-                ))}
-              </div>
-              <a href={instagramUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex font-bold text-lime-400">Ver más en Instagram →</a>
+              <img src={baileImg} alt="Instagram PowerFit" className="h-44 w-full rounded-2xl object-cover"/>
+                <div className="mt-5 flex items-center gap-4">
+              <img src={logo} alt="PowerFit" className="h-16 w-16 rounded-full object-cover"/>
+              <div>
+                <h3 className="text-xl font-black">PowerFit Copiapó</h3>
+                   <p className="text-sm text-zinc-400">
+                  Reels · Clases · Comunidad
+                  </p>
+               </div>
             </div>
-
-            <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-4 shadow-xl">
+                  <p className="mt-4 text-sm leading-6 text-zinc-400">
+                  Descubre nuestras clases, historias y contenido diario lleno de energía.
+                  </p>
+                <a href={instagramUrl} target="_blank" rel="noreferrer" className="mt-auto pt-6 inline-flex font-bold text-lime-400">
+                  Ver más en Instagram →
+                </a>
+            </div>
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-zinc-950 p-6 shadow-xl">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-3"><Facebook className="text-lime-400" /><span className="font-black uppercase">Facebook</span></div>
                 <span className="text-sm text-lime-400">Power FIT Copiapó</span>
@@ -177,7 +193,34 @@ const Landing = () => {
                 </div>
               </div>
               <p className="mt-4 text-sm leading-6 text-zinc-400">Únete a nuestra comunidad y entrena con actitud, energía y acompañamiento.</p>
-              <a href={facebookUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex font-bold text-lime-400">Ver página en Facebook →</a>
+              <a href={facebookUrl} target="_blank" rel="noreferrer" className="mt-auto pt-6 inline-flex font-bold text-lime-400">
+                 Ver página en Facebook →
+              </a>
+            </div>
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-zinc-950 p-6 shadow-xl">
+            <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <FaTiktok className="text-lime-400" />
+                    <span className="font-black uppercase">TikTok</span>
+            </div>
+                <span className="text-sm text-lime-400">@powerfit_copiapo</span>
+            </div>
+              <img src={stepImg} alt="TikTok PowerFit" className="h-44 w-full rounded-2xl object-cover"/>
+            <div className="mt-5 flex items-center gap-4">
+              <img src={logo} alt="PowerFit" className="h-16 w-16 rounded-full object-cover"/>
+           <div>
+              <h3 className="text-xl font-black">PowerFit Copiapó</h3>
+                <p className="text-sm text-zinc-400">
+                Videos · Bailes · Entrenamiento
+               </p>
+            </div>
+          </div>
+              <p className="mt-4 text-sm leading-6 text-zinc-400">
+                 Mira nuestras clases, trends y rutinas con toda la energía PowerFit.
+              </p>
+             <a href={tiktokUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex font-bold text-lime-400">
+                Ver perfil en TikTok →
+            </a>
             </div>
           </div>
         </div>
