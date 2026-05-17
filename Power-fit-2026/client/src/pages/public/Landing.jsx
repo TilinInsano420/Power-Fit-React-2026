@@ -8,13 +8,18 @@ import baileImg from '../../assets/images/baile.jpeg';
 import localizadoImg from '../../assets/images/localizado.jpeg';
 import fitSalsaImg from '../../assets/images/fitsalsa.jpeg';
 import stepImg from '../../assets/images/step.jpeg';
+import cerro from '../../assets/images/cerro.jpeg';
+import energia from '../../assets/images/energia.jpg';
+import baile from '../../assets/images/gif1.gif';
+import acompanar from '../../assets/images/acompanar.png';
 
 const instagramUrl = 'https://www.instagram.com/powerfit_copiapo';
 const facebookUrl = 'https://www.facebook.com/PowerFITcopiapo/';
+const tiktokUrl = 'https://www.tiktok.com/@powerfit_copiapo';
 
 const highlights = [
   { icon: Users, title: 'Comunidad activa', text: 'Personas reales que se apoyan y crecen juntas.' },
-  { icon: Dumbbell, title: 'Clases grupales', text: 'Baile, step, localizado, salsa fit y entrenamiento funcional.' },
+  { icon: Dumbbell, title: 'Clases grupales', text: 'Baile Entretenido, Step, Localizado, Fit Salsa, Taller Salsa, Taller Bachata' },
   { icon: Target, title: 'Acompañamiento', text: 'Seguimiento, motivación y orientación para avanzar.' },
   { icon: HeartPulse, title: 'Motivación real', text: 'Un ambiente positivo para volver con ganas cada día.' },
 ];
@@ -34,8 +39,8 @@ const services = [
   },
   {
     title: 'Baile y cardio',
-    text: 'Baile entretenido, salsa fit y sesiones llenas de energía para disfrutar entrenando.',
-    image: baileImg,
+    text: 'Sesiones llenas de ritmo, energía y baile fit para disfrutar cada entrenamiento al máximo.',
+    image: baile,
     icon: Music2,
   },
   {
@@ -217,20 +222,20 @@ const Landing = () => {
           </div>
           <div className="grid gap-5 md:grid-cols-5">
             <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 md:col-span-3">
-              <img src={heroA} alt="PowerFit Copiapó" className="h-full w-full object-cover" />
+              <img src={cerro} alt="PowerFit Copiapó" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 rounded-2xl bg-black/70 px-5 py-4 backdrop-blur">
-                <p className="flex items-center gap-2 font-black"><MapPin className="text-lime-400" /> Copiapó, Chile</p>
+                <p className="flex items-center gap-2 font-black"><MapPin className="text-lime-400" /> Cerro Imán, Copiapó</p>
               </div>
             </div>
             <div className="grid gap-5 md:col-span-2">
               <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-5">
-                <img src={fitSalsaImg} alt="Clases PowerFit" className="mb-4 h-36 w-full rounded-2xl object-cover" />
+                <img src={energia} alt="Clases PowerFit" className="mb-4 h-36 w-full rounded-2xl object-cover" />
                 <h3 className="font-black uppercase text-lime-400">Clases con energía</h3>
                 <p className="mt-2 text-sm leading-6 text-zinc-400">Baile, salsa fit, step y rutinas para disfrutar el proceso.</p>
               </div>
               <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-5">
-                <img src={localizadoImg} alt="Entrenadores PowerFit" className="mb-4 h-36 w-full rounded-2xl object-cover" />
+                <img src={acompanar} alt="Entrenadores PowerFit" className="mb-4 h-36 w-full rounded-2xl object-cover" />
                 <h3 className="font-black uppercase text-lime-400">Acompañamiento</h3>
                 <p className="mt-2 text-sm leading-6 text-zinc-400">Motivación cercana para avanzar de forma constante.</p>
               </div>
