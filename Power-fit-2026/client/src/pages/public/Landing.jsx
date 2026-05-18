@@ -13,6 +13,10 @@ import cerro from '../../assets/images/cerro.jpeg';
 import energia from '../../assets/images/energia.jpg';
 import baile from '../../assets/images/gif1.gif';
 import acompanar from '../../assets/images/acompanar.png';
+import inicioA from '../../assets/images/inicio1.jpeg';
+import inicioB from '../../assets/images/inicio2.jpeg';
+import inicioC from '../../assets/images/inicio3.jpeg';
+import inicioD from '../../assets/images/inicio4.jpeg';
 
 const instagramUrl = 'https://www.instagram.com/powerfit_copiapo';
 const facebookUrl = 'https://www.facebook.com/PowerFITcopiapo/';
@@ -99,13 +103,13 @@ const Landing = () => {
           <div className="relative hidden lg:block">
             <div className="absolute -left-10 top-12 h-72 w-72 rounded-full bg-lime-400/20 blur-3xl" />
             <div className="relative rounded-[2rem] border border-white/10 bg-black/35 p-4 shadow-2xl backdrop-blur-md">
-              <div className="grid grid-cols-2 gap-4">
-                <img src={heroB} alt="PowerFit entrenamiento" className="h-64 rounded-3xl object-cover" />
-                <img src={baileImg} alt="Clase PowerFit" className="h-64 rounded-3xl object-cover" />
-                <img src={localizadoImg} alt="Localizado PowerFit" className="h-48 rounded-3xl object-cover" />
-                <img src={stepImg} alt="Step PowerFit" className="h-48 rounded-3xl object-cover" />
+              <div className="grid grid-cols-2 gap-5 place-items-center">
+                <img src={inicioA} alt="PowerFit entrenamiento" className="h-64 w-full rounded-3xl object-cover" />
+                <img src={inicioB} alt="Clase PowerFit" className="h-64 w-full rounded-3xl object-cover" />
+                <img src={inicioC} alt="Localizado PowerFit" className="h-64 w-full rounded-3xl object-cover" />
+                <img src={inicioD} alt="Step PowerFit" className="h-64 w-full rounded-3xl object-cover" />
               </div>
-              <div className="absolute left-1/2 top-1/2 grid h-36 w-36 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-4 border-lime-400 bg-black p-3 shadow-[0_0_35px_rgba(132,204,22,0.6)]">
+              <div className="absolute left-1/2 top-[48%] grid h-36 w-36 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-4 border-lime-400 bg-black p-3 shadow-[0_0_35px_rgba(132,204,22,0.6)]">
                 <img src={logo} alt="Logo PowerFit" className="h-full w-full rounded-full object-cover" />
               </div>
             </div>
@@ -160,7 +164,7 @@ const Landing = () => {
             <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-zinc-950 p-6 shadow-xl">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-3"><Instagram className="text-lime-400" /><span className="font-black uppercase">Instagram</span></div>
-                <span className="text-sm text-lime-400">@powerfit_copiapo</span>
+                <span className="text-sm text-lime-400"></span>
               </div>
               <img src={baileImg} alt="Instagram PowerFit" className="h-44 w-full rounded-2xl object-cover"/>
                 <div className="mt-5 flex items-center gap-4">
@@ -182,7 +186,7 @@ const Landing = () => {
             <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-zinc-950 p-6 shadow-xl">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-3"><Facebook className="text-lime-400" /><span className="font-black uppercase">Facebook</span></div>
-                <span className="text-sm text-lime-400">Power FIT Copiapó</span>
+                <span className="text-sm text-lime-400"></span>
               </div>
               <img src={heroC} alt="Comunidad PowerFit" className="h-44 w-full rounded-2xl object-cover" />
               <div className="mt-5 flex items-center gap-4">
@@ -203,7 +207,7 @@ const Landing = () => {
                   <FaTiktok className="text-lime-400" />
                     <span className="font-black uppercase">TikTok</span>
             </div>
-                <span className="text-sm text-lime-400">@powerfit_copiapo</span>
+                <span className="text-sm text-lime-400"></span>
             </div>
               <img src={stepImg} alt="TikTok PowerFit" className="h-44 w-full rounded-2xl object-cover"/>
             <div className="mt-5 flex items-center gap-4">
