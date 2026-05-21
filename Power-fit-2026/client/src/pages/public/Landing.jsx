@@ -77,7 +77,7 @@ const Landing = () => {
     name: 'Javier Órtiz',
     role: 'Coach de Bienestar',
     description:
-      '------------------------------------------------------------',
+      'Soy Javier Órtiz, coach de bienestar en la comunidad PowerFit, apasionado por ayudar a las personas a sentirse mejor a través del movimiento. Me desempeño en el área de baile y localizada, creando espacios llenos de energía, motivación y bienestar, donde cada persona puede disfrutar, activarse y avanzar en su mejor versión.',
     image: javi,
   },
   {
@@ -91,7 +91,7 @@ const Landing = () => {
     name: 'Cristian Rivera',
     role: 'Coach de Bienestar',
     description:
-      '------------------------------------------------------------',
+      'Soy Cristian Rivera, coach de baile en la comunidad PowerFit, apasionado por compartir la energía y alegría del movimiento. A través de mis talleres de salsa y bachata, busco que cada persona aprenda, disfrute y conecte con el ritmo, viviendo una experiencia llena de diversión, confianza y buena energía.',
     image: fitSalsaImg,
   },
   {
