@@ -11,7 +11,6 @@ import localizadoImg from '../../assets/images/localizado.jpeg';
 import fitSalsaImg from '../../assets/images/fitsalsa.jpeg';
 import stepImg from '../../assets/images/step.jpeg';
 import cerro from '../../assets/images/cerro.jpeg';
-import energia from '../../assets/images/energia.jpg';
 import baile from '../../assets/images/gif1.gif';
 import acompanar from '../../assets/images/acompanar.png';
 import inicioA from '../../assets/images/inicio1.jpeg';
@@ -24,10 +23,14 @@ import tiktok from '../../assets/images/tiktok.mp4';
 import gabi from '../../assets/images/gabi.jpeg';
 import javi from '../../assets/images/javi.jpeg';
 import power from '../../assets/images/power.jpeg';
+import clases from '../../assets/images/clases.mp4';
+import comunidad from '../../assets/images/comunidad.mp4';
+import entrenamiento from '../../assets/images/entrenamiento.mp4';
 
 const instagramUrl = 'https://www.instagram.com/powerfit_copiapo';
 const facebookUrl = 'https://www.facebook.com/PowerFITcopiapo/';
 const tiktokUrl = 'https://www.tiktok.com/@powerfit_copiapo';
+const direccionUrl = 'https://www.google.com/maps/place/PowerFit+Copiapo/@-27.3632257,-70.3206141,17z/data=!4m6!3m5!1s0x9698053de6062ca1:0xc1fae9af13081e27!8m2!3d-27.3630232!4d-70.3222673!16s%2Fg%2F11y4yjhzqf?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D';
 
 const highlights = [
   { icon: Users, title: 'Comunidad activa', text: 'Personas reales que se apoyan y crecen juntas.' },
@@ -40,13 +43,16 @@ const services = [
   {
     title: 'Entrenamiento personalizado',
     text: 'Planes guiados según tus objetivos, evaluación y acompañamiento constante.',
-    image: heroB,
+    image: entrenamiento,
+    isVideo: true,
+    zoom: 'scale-90',
     icon: Dumbbell,
   },
   {
     title: 'Clases grupales',
     text: 'Localizado, step, funcional training y rutinas dinámicas para todos los niveles.',
-    image: localizadoImg,
+    image: clases,
+    isVideo: true,
     icon: Users,
   },
   {
@@ -58,7 +64,8 @@ const services = [
   {
     title: 'Bienestar y comunidad',
     text: 'Un espacio cercano, motivador y pensado para sentirte acompañado en tu proceso.',
-    image: heroC,
+    image: comunidad,
+    isVideo: true,
     icon: Sparkles,
   },
 ];
@@ -286,10 +293,13 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
             </div>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ title, text, image, icon: Icon }) => (
+            {services.map(({ title, text, image, isVideo, zoom, icon: Icon }) => (
               <article key={title} className="group overflow-hidden rounded-[2rem] border border-lime-400/20 bg-black shadow-[0_0_35px_rgba(132,204,22,0.10)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]">
                 <div className="relative h-56 overflow-hidden">
-                  <img src={image} alt={title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  {isVideo ? (
+                <video src={image} autoPlay loop muted playsInline className="h-full w-full object-cover transition duration-500 group-hover:scale-105"/>
+                ) : (
+                <img src={image} alt={title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105"/>)}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center rounded-2xl bg-lime-400 text-black">
                     <Icon size={24} />
@@ -444,13 +454,15 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
         <p className="font-black uppercase">Ver Tiktok</p>
         <p className="text-sm">PowerFit_Copiapó</p>
       </a>
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:-translate-y-2 hover:border-lime-400 hover:shadow-[0_0_40px_rgba(132,204,22,0.35)]">
+      <a href={direccionUrl} target="_blank"rel="noreferrer" className="rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:-translate-y-2 hover:border-lime-400 hover:shadow-[0_0_40px_rgba(132,204,22,0.35)]">
         <MapPin className="mb-3 text-lime-400" />
-        <p className="font-black uppercase">Copiapó, Chile</p>
+          <p className="font-black uppercase">
+           Copiapó, Chile
+          </p>
         <p className="text-sm leading-6 text-zinc-400">
-          Calle Lastarria #1098, esquina Algarrobo.
-        </p>
-          </div>
+           Calle Lastarria #1098, esquina Algarrobo.
+          </p>
+        </a>
         </div>
       </div>
     </section>
