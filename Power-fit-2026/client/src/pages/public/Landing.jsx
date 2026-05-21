@@ -21,6 +21,9 @@ import inicioD from '../../assets/images/inicio4.jpeg';
 import insta from '../../assets/images/instagram.mp4';
 import face from '../../assets/images/facebook.mp4';
 import tiktok from '../../assets/images/tiktok.mp4';
+import gabi from '../../assets/images/gabi.jpeg';
+import javi from '../../assets/images/javi.jpeg';
+import power from '../../assets/images/power.jpeg';
 
 const instagramUrl = 'https://www.instagram.com/powerfit_copiapo';
 const facebookUrl = 'https://www.facebook.com/PowerFITcopiapo/';
@@ -68,21 +71,14 @@ const Landing = () => {
     role: 'Coach de Bienestar',
     description:
       '------------------------------------------------------------',
-    image: stepImg,
+    image: javi,
   },
   {
     name: 'Gabriela Sosa',
     role: 'Coach de Bienestar',
     description:
-      '------------------------------------------------------------',
-    image: localizadoImg,
-  },
-  {
-    name: 'Gloria Rodriguez',
-    role: 'Coach de Bienestar',
-    description:
-      '------------------------------------------------------------',
-    image: stepImg,
+      'Fundadora de PowerFit, coach de bienestar y estudiante de Nutrición. Hace más de 8 años acompaño a mujeres y familias a mejorar sus hábitos, energía y bienestar de forma práctica y sostenible. Mi misión es inspirar un estilo de vida saludable a través de una comunidad cercana, motivadora y enfocada en el crecimiento personal. ✨“Transformando hábitos, bienestar y confianza para una vida mejor.”✨',
+    image: gabi,
   },
   {
     name: 'Cristian Rivera',
@@ -92,19 +88,12 @@ const Landing = () => {
     image: fitSalsaImg,
   },
   {
-    name: 'Katherine Valencia',
-    role: 'Coach Bienestar',
-    description:
-      '------------------------------------------------------------',
-    image: stepImg,
-  },
-  {
-    name: 'Daniela Barahona',
+    name: 'Gloria & Katherine & Daniela',
     role: 'Coach de Bienestar',
     description:
       '------------------------------------------------------------',
-    image: localizadoImg,
-  },
+    image: baileImg,
+  }
 ];
 
 const [coachIndex, setCoachIndex] = useState(0);
@@ -329,7 +318,7 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
             </ul>
           </div>
           <div className="grid gap-5 md:grid-cols-5">
-            <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_40px_rgba(132,204,22,0.12)] transition hover:shadow-[0_0_60px_rgba(132,204,22,0.25)] md:col-span-3">
+            <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_40px_rgba(132,204,22,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)] md:col-span-3">
               <img src={cerro} alt="PowerFit Copiapó" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 rounded-2xl bg-black/70 px-5 py-4 backdrop-blur">
@@ -337,12 +326,12 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
               </div>
             </div>
             <div className="grid gap-5 md:col-span-2">
-              <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-5 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition hover:shadow-[0_0_55px_rgba(132,204,22,0.22)]">
-                <img src={energia} alt="Clases PowerFit" className="mb-4 h-36 w-full rounded-2xl object-cover" />
+              <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-5 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(132,204,22,0.22)]">
+                <img src={power} alt="Clases PowerFit" className="mb-4 h-36 w-full rounded-2xl object-cover" />
                 <h3 className="font-black uppercase text-lime-400">Clases con energía</h3>
                 <p className="mt-2 text-sm leading-6 text-zinc-400">Baile, salsa fit, step y rutinas para disfrutar el proceso.</p>
               </div>
-              <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-5 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition hover:shadow-[0_0_55px_rgba(132,204,22,0.22)]">
+              <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-5 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_55px_rgba(132,204,22,0.22)]">
                 <img src={acompanar} alt="Entrenadores PowerFit" className="mb-4 h-36 w-full rounded-2xl object-cover" />
                 <h3 className="font-black uppercase text-lime-400">Acompañamiento</h3>
                 <p className="mt-2 text-sm leading-6 text-zinc-400">Motivación cercana para avanzar de forma constante.</p>
@@ -393,13 +382,13 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
     return (
       <div
         key={coach.name}
-        className="overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_0_40px_rgba(132,204,22,0.12)] transition hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
+        className="overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_0_40px_rgba(132,204,22,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/40 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
       >
         <div className="relative h-[420px] overflow-hidden">
           <img
             src={coach.image}
             alt={coach.name}
-            className="h-full w-full object-cover transition duration-500 hover:scale-105"
+            className={`h-full w-full object-cover transition duration-500 hover:scale-105 ${ coach.name === "Gabriela Sosa" ? "object-top": ""} ${coach.name === "Cristian Rivera"? "scale-125": "hover:scale-105"}`}
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
@@ -416,9 +405,9 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
         </div>
 
         <div className="p-6">
-          <p className="leading-8 text-zinc-400">
+          <blockquote className="border-l-4 border-lime-400 pl-4 text-left text-zinc-300 leading-8">
             {coach.description}
-          </p>
+          </blockquote>
         </div>
       </div>
     );
@@ -440,22 +429,22 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-4">
-      <a href={instagramUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-lime-400 p-5 text-black transition hover:bg-lime-300">
+      <a href={instagramUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-lime-400 p-5 text-black transition-all duration-300 hover:-translate-y-2 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(132,204,22,0.45)]">
         <Instagram className="mb-3" />
         <p className="font-black uppercase">Ver Instagram</p>
         <p className="text-sm">@powerfit_copiapo</p>
       </a>
-        <a href={facebookUrl} target="_blank" rel="noreferrer" className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-lime-400">
+        <a href={facebookUrl} target="_blank" rel="noreferrer" className="rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:-translate-y-2 hover:border-lime-400 hover:shadow-[0_0_40px_rgba(132,204,22,0.35)]">
         <Facebook className="mb-3 text-lime-400" />
         <p className="font-black uppercase">Ver Facebook</p>
         <p className="text-sm text-zinc-400">Power FIT Copiapó</p>
       </a>
-      <a href={tiktokUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-lime-400 p-5 text-black transition hover:bg-lime-300">
+      <a href={tiktokUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-lime-400 p-5 text-black transition-all duration-300 hover:-translate-y-2 hover:bg-lime-300 hover:shadow-[0_0_40px_rgba(132,204,22,0.45)]">
         <FaTiktok className="mb-3" />
         <p className="font-black uppercase">Ver Tiktok</p>
         <p className="text-sm">PowerFit_Copiapó</p>
       </a>
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+      <div className="rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:-translate-y-2 hover:border-lime-400 hover:shadow-[0_0_40px_rgba(132,204,22,0.35)]">
         <MapPin className="mb-3 text-lime-400" />
         <p className="font-black uppercase">Copiapó, Chile</p>
         <p className="text-sm leading-6 text-zinc-400">
