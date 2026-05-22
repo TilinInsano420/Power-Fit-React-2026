@@ -26,6 +26,14 @@ import power from '../../assets/images/power.jpeg';
 import clases from '../../assets/images/clases.mp4';
 import comunidad from '../../assets/images/comunidad.mp4';
 import entrenamiento from '../../assets/images/entrenamiento.mp4';
+import coachs from '../../assets/images/coachscopia3.png';
+import energy1 from '../../assets/images/energy1.jpeg';
+import energy2 from '../../assets/images/energy2.jpeg';
+import energy3 from '../../assets/images/energy3.jpeg';
+import energy4 from '../../assets/images/energy4.jpeg';
+import energy5 from '../../assets/images/energy5.jpeg';
+import noticia from '../../assets/images/noticia.jpeg';
+import horario from '../../assets/images/horario.jpeg';
 
 const instagramUrl = 'https://www.instagram.com/powerfit_copiapo';
 const facebookUrl = 'https://www.facebook.com/PowerFITcopiapo/';
@@ -95,15 +103,28 @@ const Landing = () => {
     image: fitSalsaImg,
   },
   {
-    name: 'Gloria & Katherine & Daniela',
+    name: 'Katherine & Gloria & Katherine & Daniela & Claudia',
     role: 'Coach de Bienestar',
     description:
-      '------------------------------------------------------------',
-    image: baileImg,
+      'Nosotras nos encargamos de guiar y motivar las clases de baile entretenido, contagiando alegría, ritmo y activación en cada sesión. Por otro lado, nuestro equipo de ejercicio localizado se enfoca en fortalecer, tonificar y mejorar la condición física de cada persona. Juntas, somos un equipo comprometido en inspirar y acompañar a nuestra comunidad a cuidar su salud. ¡Demostramos día a día que con actitud, disciplina y unión, todo es posible!',
+    image: coachs,
   }
 ];
 
 const [coachIndex, setCoachIndex] = useState(0);
+const [selectedImage, setSelectedImage] = useState(null);
+const [energyIndex, setEnergyIndex] = useState(0);
+const [expandedEnergy, setExpandedEnergy] = useState(false);
+
+const energyImages = [energy1, energy2, energy3, energy4, energy5];
+
+const nextEnergy = () => {
+  setEnergyIndex((prev) => (prev + 1) % energyImages.length);
+};
+
+const prevEnergy = () => {
+  setEnergyIndex((prev) => (prev - 1 + energyImages.length) % energyImages.length);
+};
 
 const nextCoaches = () => {
   setCoachIndex((prev) => (prev + 1) % coaches.length);
@@ -284,6 +305,101 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
   </div>
 </section>
 
+      <section id="noticias" className="py-24 bg-zinc-950">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.3em] text-lime-400">Noticias</p>
+            <h2 className="text-4xl font-black uppercase sm:text-5xl">Entérate de las <span className="text-lime-400">novedades</span> de PowerFit</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
+            <div className="md:col-span-2">
+               <button onClick={() => setSelectedImage(noticia)} className="group relative h-80 w-full overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]">
+                <img src={noticia} alt="Noticia de la semana" className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-lime-400">
+                    Noticia de la semana
+                  </p>
+                    <p className="mt-2 text-xl font-black text-white">
+                      Descubre lo nuevo en PowerFit
+                  </p>
+            </div>
+        </button>
+      </div>
+            <div className="grid gap-6">
+              <button
+                onClick={() => setSelectedImage(horario)}
+                className="group relative h-40 overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
+              >
+                <img src={horario} alt="Horario de la semana" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-lime-400">Horario</p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => setExpandedEnergy(true)}
+                className="group relative h-40 overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
+              >
+                <img src={energyImages[energyIndex]} alt="Energy drink" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-lime-400">Hidratación</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-h-[90vh] max-w-4xl w-full overflow-hidden rounded-[2rem]" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage} alt="Ampliada" className="h-full w-full object-contain" />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-lime-400 text-black transition hover:bg-lime-300"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
+      {expandedEnergy && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur"
+          onClick={() => setExpandedEnergy(false)}
+        >
+          <div className="relative max-h-[90vh] max-w-2xl w-full overflow-hidden rounded-[2rem]" onClick={(e) => e.stopPropagation()}>
+            <img src={energyImages[energyIndex]} alt="Energy drink ampliado" className="h-full w-full object-contain" />
+            <button
+              onClick={prevEnergy}
+              className="absolute left-4 top-1/2 z-20 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-lime-400 text-black transition hover:bg-lime-300"
+            >
+              ←
+            </button>
+            <button
+              onClick={nextEnergy}
+              className="absolute right-4 top-1/2 z-20 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-lime-400 text-black transition hover:bg-lime-300"
+            >
+              →
+            </button>
+            <button
+              onClick={() => setExpandedEnergy(false)}
+              className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-lime-400 text-black transition hover:bg-lime-300"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
       <section id="servicios" className="bg-zinc-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -392,28 +508,19 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
     return (
       <div
         key={coach.name}
-        className="overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_0_40px_rgba(132,204,22,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/40 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
-      >
-        <div className="relative h-[420px] overflow-hidden">
-          <img
-            src={coach.image}
-            alt={coach.name}
-            className={`h-full w-full object-cover transition duration-500 hover:scale-105 ${ coach.name === "Gabriela Sosa" ? "object-top": ""} ${coach.name === "Cristian Rivera"? "scale-125": "hover:scale-105"}`}
-          />
-
+        className="overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_0_40px_rgba(132,204,22,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/40 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]">
+        <div className={`relative h-[420px] overflow-hidden ${coach.name === "Katherine & Gloria & Katherine & Daniela & Claudia"? "bg-black flex items-center justify-center": ""}`}>
+              <img src={coach.image} alt={coach.name} className={`h-full w-full transition duration-500 ${coach.name === 'Katherine & Gloria & Katherine & Daniela & Claudia' ? "object-cover object-[center_100%]" : "object-cover hover:scale-105"} ${coach.name === "Gabriela Sosa" ? "object-top" : ""} ${coach.name === "Cristian Rivera" ? "scale-125" : ""}`}/>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-
-          <div className="absolute bottom-0 p-6">
-            <h3 className="text-3xl font-black text-white">
-              {coach.name}
-            </h3>
-
-            <p className="font-bold text-lime-400">
-              {coach.role}
-            </p>
+            <div className="absolute bottom-0 p-6">
+                <h3 className="text-3xl font-black text-white">
+                    {coach.name}
+                 </h3>
+                <p className="font-bold text-lime-400">
+                    {coach.role}
+                 </p>
+              </div>
           </div>
-        </div>
-
         <div className="p-6">
           <blockquote className="border-l-4 border-lime-400 pl-4 text-left text-zinc-300 leading-8">
             {coach.description}

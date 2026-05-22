@@ -2,6 +2,8 @@ import { Facebook, Instagram, MapPin } from 'lucide-react';
 import logo from '../../assets/images/logo.jpeg';
 import { FaTiktok } from 'react-icons/fa';
 
+const direccionUrl = 'https://www.google.com/maps/place/PowerFit+Copiapo/@-27.3632257,-70.3206141,17z/data=!4m6!3m5!1s0x9698053de6062ca1:0xc1fae9af13081e27!8m2!3d-27.3630232!4d-70.3222673!16s%2Fg%2F11y4yjhzqf?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D';
+
 const Footer = () => {
   return (
     <footer className="border-t border-white/10 bg-black text-white">
@@ -40,13 +42,22 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-black uppercase tracking-wider text-lime-400">Ubicación</h3>
-          <p className="flex items-start gap-2 text-sm leading-6 text-zinc-400"><MapPin className="mt-1 shrink-0 text-lime-400" size={18} /> Calle Lastarria #1098, esquina Algarrobo, Copiapó.</p>
+  <h3 className="mb-4 text-sm font-black uppercase tracking-wider text-lime-400">
+    Ubicación
+  </h3>
+
+          <p className="flex items-start gap-2 text-sm leading-6 text-zinc-400">
+            <MapPin className="mt-1 shrink-0 text-lime-400"size={18}/>
+                Calle Lastarria #1098, esquina Algarrobo, Copiapó.
+          </p>
+           <a href={direccionUrl} target="_blank" rel="noreferrer"  className="mt-4 block overflow-hidden rounded-2xl border border-lime-400/20 transition-all duration-300 hover:-translate-y-2 hover:border-lime-400 hover:shadow-[0_0_25px_rgba(132,204,22,0.25)]">
+           <iframe title="Ubicación PowerFit Copiapó" src="https://www.google.com/maps?q=PowerFit+Copiapo&output=embed" width="100%" height="180" loading="lazy" className="pointer-events-none"/>
+          </a>
+      </div>
+          </div>
+              <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-zinc-500">
+              © 2026 PowerFit Copiapó. Diseñado con energía y pasión.
         </div>
-      </div>
-      <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-zinc-500">
-        © 2026 PowerFit Copiapó. Diseñado con energía y pasión.
-      </div>
     </footer>
   );
 };
