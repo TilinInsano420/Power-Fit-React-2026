@@ -25,9 +25,11 @@ const Footer = () => {
           <h3 className="mb-4 text-sm font-black uppercase tracking-wider text-lime-400">Navegación</h3>
           <ul className="space-y-2 text-sm text-zinc-400">
             <li><a href="#inicio" className="hover:text-lime-400">Inicio</a></li>
+            <li><a href="#redes" className="hover:text-lime-400">Redes</a></li>
+            <li><a href="#noticias" className="hover:text-lime-400">Noticias</a></li>
             <li><a href="#servicios" className="hover:text-lime-400">Servicios</a></li>
             <li><a href="#comunidad" className="hover:text-lime-400">Comunidad</a></li>
-            <li><a href="#redes" className="hover:text-lime-400">Redes</a></li>
+            <li><a href="#coachs" className="hover:text-lime-400">Coachs</a></li>
             <li><a href="#contacto" className="hover:text-lime-400">Contacto</a></li>
           </ul>
         </div>

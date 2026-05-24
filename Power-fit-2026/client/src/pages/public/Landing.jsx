@@ -312,9 +312,9 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
             <h2 className="text-4xl font-black uppercase sm:text-5xl">Entérate de las <span className="text-lime-400">novedades</span> de PowerFit</h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
-            <div className="md:col-span-2">
-               <button onClick={() => setSelectedImage(noticia)} className="group relative h-80 w-full overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]">
+          <div className="grid gap-6 md:grid-cols-[1.6fr_1fr] lg:gap-8">
+            <div>
+               <button onClick={() => setSelectedImage(noticia)} className="group relative h-[560px] w-full overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]">
                 <img src={noticia} alt="Noticia de la semana" className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"/>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                 <div className="absolute bottom-6 left-6">
@@ -324,13 +324,13 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
                     <p className="mt-2 text-xl font-black text-white">
                       Descubre lo nuevo en PowerFit
                   </p>
+                </div>
+              </button>
             </div>
-        </button>
-      </div>
             <div className="grid gap-6">
               <button
                 onClick={() => setSelectedImage(horario)}
-                className="group relative h-40 overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
+                className="group relative h-[260px] overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
               >
                 <img src={horario} alt="Horario de la semana" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
@@ -341,7 +341,7 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
 
               <button
                 onClick={() => setExpandedEnergy(true)}
-                className="group relative h-40 overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
+                className="group relative h-[260px] overflow-hidden rounded-[2rem] border border-lime-400/20 shadow-[0_0_35px_rgba(132,204,22,0.10)] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/60 hover:shadow-[0_0_60px_rgba(132,204,22,0.25)]"
               >
                 <img src={energyImages[energyIndex]} alt="Energy drink" className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
@@ -359,8 +359,8 @@ const visibleCoaches = coaches.slice(coachIndex, coachIndex + 3);
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-h-[90vh] max-w-4xl w-full overflow-hidden rounded-[2rem]" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedImage} alt="Ampliada" className="h-full w-full object-contain" />
+          <div className="relative flex items-center justify-center max-h-[90vh] max-w-4xl w-full rounded-[2rem]" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage} alt="Ampliada" className="max-h-[90vh] max-w-full object-contain" />
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-lime-400 text-black transition hover:bg-lime-300"
